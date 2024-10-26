@@ -4,10 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PerforamancemeasurementApplication {
+public class PerformanceMeasurementApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PerforamancemeasurementApplication.class, args);
+		SpringApplication.run(PerformanceMeasurementApplication.class, args);
 	}
-
 }
