@@ -1,26 +1,16 @@
 package com.performance_measurement.perforamancemeasurement.Classes;
 
-public class Book {
-    private String name;
-    private String author;
-    private int book_id;
+import lombok.Getter;
 
-    public Book(String name, String author, int book_id) {
+@Getter
+public class Book {
+    private final String name;
+    private final String author;
+    private final int isbnID;
+
+    public Book(String name, String author, int isbnID) {
         this.name = name;
         this.author = author;
-        this.book_id = book_id;
+        this.isbnID = isbnID;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public int getBook_id() {
-        return book_id;
-    }
-
 }

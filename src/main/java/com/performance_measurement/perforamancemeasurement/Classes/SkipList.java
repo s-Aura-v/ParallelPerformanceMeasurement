@@ -13,10 +13,10 @@ public class SkipList {
     public SkipList() {
         maxLevel = 4;
         level = 0;
-        head = new SkipListNode(Integer.MIN_VALUE, maxLevel);
+        head = new SkipListNode(Long.MIN_VALUE, maxLevel);
     }
 
-    public void insert(int value) {
+    public void insert(long value) {
         SkipListNode[] update = new SkipListNode[maxLevel + 1];
         SkipListNode current = this.head;
 
@@ -47,7 +47,7 @@ public class SkipList {
         }
     }
 
-    public boolean search(int value) {
+    public boolean search(long value) {
         SkipListNode current = this.head;
         for (int i = level; i >= 0; i--) {
             while (current.forward[i] != null && current.forward[i].value < value) {
@@ -58,7 +58,7 @@ public class SkipList {
         return current != null && current.value == value;
     }
 
-    public void delete(int value) {
+    public void delete(long value) {
         SkipListNode[] update = new SkipListNode[maxLevel + 1];
         SkipListNode current = this.head;
 

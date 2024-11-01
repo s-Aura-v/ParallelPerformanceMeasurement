@@ -1,0 +1,307 @@
+[
+  {
+    "name": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "isbnID": 9780061120084
+  },
+  {
+    "name": "1984",
+    "author": "George Orwell",
+    "isbnID": 9780451524935
+  },
+  {
+    "name": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "isbnID": 9780743273565
+  },
+  {
+    "name": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "isbnID": 9780141439518
+  },
+  {
+    "name": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "isbnID": 9780316769488
+  },
+  {
+    "name": "The Grapes of Wrath",
+    "author": "John Steinbeck",
+    "isbnID": 9780143039433
+  },
+  {
+    "name": "Brave New World",
+    "author": "Aldous Huxley",
+    "isbnID": 9780060850524
+  },
+  {
+    "name": "Fahrenheit 451",
+    "author": "Ray Bradbury",
+    "isbnID": 9781451673319
+  },
+  {
+    "name": "The Old Man and the Sea",
+    "author": "Ernest Hemingway",
+    "isbnID": 9780684153636
+  },
+  {
+    "name": "Wuthering Heights",
+    "author": "Emily Brontë",
+    "isbnID": 9780141439556
+  },
+  {
+    "name": "The Picture of Dorian Gray",
+    "author": "Oscar Wilde",
+    "isbnID": 9780141439570
+  },
+  {
+    "name": "Jane Eyre",
+    "author": "Charlotte Brontë",
+    "isbnID": 9780142437209
+  },
+  {
+    "name": "Moby-Dick",
+    "author": "Herman Melville",
+    "isbnID": 9781503280786
+  },
+  {
+    "name": "The Adventures of Huckleberry Finn",
+    "author": "Mark Twain",
+    "isbnID": 9780486280615
+  },
+  {
+    "name": "Of Mice and Men",
+    "author": "John Steinbeck",
+    "isbnID": 9780142000670
+  },
+  {
+    "name": "The Bell Jar",
+    "author": "Sylvia Plath",
+    "isbnID": 9780060837020
+  },
+  {
+    "name": "Lord of the Flies",
+    "author": "William Golding",
+    "isbnID": 9781579129473
+  },
+  {
+    "name": "Their Eyes Were Watching God",
+    "author": "Zora Neale Hurston",
+    "isbnID": 9780060883287
+  },
+  {
+    "name": "The Scarlet Letter",
+    "author": "Nathaniel Hawthorne",
+    "isbnID": 9780451531351
+  },
+  {
+    "name": "Catch-22",
+    "author": "Joseph Heller",
+    "isbnID": 9781451626650
+  },
+  {
+    "name": "The Kite Runner",
+    "author": "Khaled Hosseini",
+    "isbnID": 9781594631931
+  },
+  {
+    "name": "Beloved",
+    "author": "Toni Morrison",
+    "isbnID": 9781400033416
+  },
+  {
+    "name": "The Color Purple",
+    "author": "Alice Walker",
+    "isbnID": 9780156028356
+  },
+  {
+    "name": "The Road",
+    "author": "Cormac McCarthy",
+    "isbnID": 9780307387899
+  },
+  {
+    "name": "The Fault in Our Stars",
+    "author": "John Green",
+    "isbnID": 9780525478812
+  },
+  {
+    "name": "A Streetcar Named Desire",
+    "author": "Tennessee Williams",
+    "isbnID": 9780811214042
+  },
+  {
+    "name": "Death of a Salesman",
+    "author": "Arthur Miller",
+    "isbnID": 9780140481342
+  },
+  {
+    "name": "Invisible Man",
+    "author": "Ralph Ellison",
+    "isbnID": 9780679732761
+  },
+  {
+    "name": "The House on Mango Street",
+    "author": "Sandra Cisneros",
+    "isbnID": 9780679734772
+  },
+  {
+    "name": "A Raisin in the Sun",
+    "author": "Lorraine Hansberry",
+    "isbnID": 9780679755333
+  },
+  {
+    "name": "The Joy Luck Club",
+    "author": "Amy Tan",
+    "isbnID": 9780143038092
+  },
+  {
+    "name": "The Handmaid's Tale",
+    "author": "Margaret Atwood",
+    "isbnID": 9780385490818
+  },
+  {
+    "name": "The Things They Carried",
+    "author": "Tim O'Brien",
+    "isbnID": 9780618706419
+  },
+  {
+    "name": "Slaughterhouse-Five",
+    "author": "Kurt Vonnegut",
+    "isbnID": 9780440180296
+  },
+  {
+    "name": "The Road",
+    "author": "Cormac McCarthy",
+    "isbnID": 9780307387899
+  },
+  {
+    "name": "One Hundred Years of Solitude",
+    "author": "Gabriel García Márquez",
+    "isbnID": 9780060883287
+  },
+  {
+    "name": "The Alchemist",
+    "author": "Paulo Coelho",
+    "isbnID": 9780062315007
+  },
+  {
+    "name": "Atonement",
+    "author": "Ian McEwan",
+    "isbnID": 9780385660683
+  },
+  {
+    "name": "The Secret Life of Bees",
+    "author": "Sue Monk Kidd",
+    "isbnID": 9780142001745
+  },
+  {
+    "name": "The Lovely Bones",
+    "author": "Alice Sebold",
+    "isbnID": 9780316043439
+  },
+  {
+    "name": "The Road",
+    "author": "Cormac McCarthy",
+    "isbnID": 9780307387899
+  },
+  {
+    "name": "Atonement",
+    "author": "Ian McEwan",
+    "isbnID": 9780385660683
+  },
+  {
+    "name": "The Absolutely True Diary of a Part-Time Indian",
+    "author": "Sherman Alexie",
+    "isbnID": 9780316013680
+  },
+  {
+    "name": "The Glass Castle",
+    "author": "Jeannette Walls",
+    "isbnID": 9780743247542
+  },
+  {
+    "name": "The Perks of Being a Wallflower",
+    "author": "Stephen Chbosky",
+    "isbnID": 9780671027346
+  },
+  {
+    "name": "The Night Circus",
+    "author": "Erin Morgenstern",
+    "isbnID": 9780385534635
+  },
+  {
+    "name": "The Poisonwood Bible",
+    "author": "Barbara Kingsolver",
+    "isbnID": 9780060786502
+  },
+  {
+    "name": "The Immortal Life of Henrietta Lacks",
+    "author": "Rebecca Skloot",
+    "isbnID": 9781400052189
+  },
+  {
+    "name": "The Book Thief",
+    "author": "Markus Zusak",
+    "isbnID": 9780375831003
+  },
+  {
+    "name": "The Glass Castle",
+    "author": "Jeannette Walls",
+    "isbnID": 9780743247542
+  },
+  {
+    "name": "Everything I Never Told You",
+    "author": "Celeste Ng",
+    "isbnID": 9780143127550
+  },
+  {
+    "name": "The Brief Wondrous Life of Oscar Wao",
+    "author": "Junot Díaz",
+    "isbnID": 9781594483295
+  },
+  {
+    "name": "Where the Crawdads Sing",
+    "author": "Delia Owens",
+    "isbnID": 9780735219090
+  },
+  {
+    "name": "The Underground Railroad",
+    "author": "Colson Whitehead",
+    "isbnID": 9780345804327
+  },
+  {
+    "name": "Little Fires Everywhere",
+    "author": "Celeste Ng",
+    "isbnID": 9780735224292
+  },
+  {
+    "name": "Station Eleven",
+    "author": "Emily St. John Mandel",
+    "isbnID": 9780804172448
+  },
+  {
+    "name": "Circe",
+    "author": "Madeline Miller",
+    "isbnID": 9780316388645
+  },
+  {
+    "name": "The Nightingale",
+    "author": "Kristin Hannah",
+    "isbnID": 9780399171944
+  },
+  {
+    "name": "Normal People",
+    "author": "Sally Rooney",
+    "isbnID": 9781984822185
+  },
+  {
+    "name": "The Vanishing Half",
+    "author": "Brit Bennett",
+    "isbnID": 9780525536963
+  },
+  {
+    "name": "Anxious People",
+    "author": "Fredrik Backman",
+    "isbnID": 9781501160835
+  }
+]
