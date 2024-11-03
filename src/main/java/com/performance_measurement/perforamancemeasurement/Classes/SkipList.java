@@ -9,6 +9,8 @@ public class SkipList {
     private SkipListNode head;
     private int maxLevel;
     private int level;
+    // Not required; but an addition that makes it easier to search for random values.
+    private int id;
 
     public SkipList() {
         maxLevel = 4;
@@ -81,4 +83,20 @@ public class SkipList {
             }
         }
     }
+
+//    /**
+//     * A search random method that randomly gets a value from the skip list.
+//     * @param value
+//     * @return
+//     */
+//    public boolean searchRandom(long value) {
+//        SkipListNode current = this.head;
+//        for (int i = level; i >= 0; i--) {
+//            while (current.forward[i] != null && current.forward[i].value < value) {
+//                current = current.forward[i];
+//            }
+//        }
+//        current = current.forward[0];
+//        return current != null && current.value == value;
+//    }
 }

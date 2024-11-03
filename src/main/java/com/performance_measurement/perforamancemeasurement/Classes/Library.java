@@ -7,22 +7,30 @@ public class Library {
         this.bookCollection = bookCollection;
     }
 
-    public void addBook() {
+    public void addBook(long isbnID) {
         LibraryLock.writeLock();
         try {
-            bookCollection.insert(1);
+            bookCollection.insert(isbnID);
         } finally {
             LibraryLock.unlockWrite();
         }
     }
 
-    public int getIndividualBook(int bookName) {
+    public boolean readBook(long isbnID) {
         LibraryLock.readLock();
         try {
-            bookCollection.search(bookName);
+            return bookCollection.search(isbnID);
         } finally {
             LibraryLock.unlockRead();
         }
-        return 1;
+    }
+
+    public void removeBook(long isbnID) {
+        LibraryLock.writeLock();
+        try {
+            bookCollection.delete(isbnID);
+        } finally {
+            LibraryLock.unlockWrite();
+        }
     }
 }
