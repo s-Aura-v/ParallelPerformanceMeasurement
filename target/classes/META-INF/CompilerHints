@@ -3,8 +3,6 @@ dontinline,*.*_avgt_jmhStub
 dontinline,*.*_sample_jmhStub
 dontinline,*.*_ss_jmhStub
 dontinline,*.*_thrpt_jmhStub
-inline,org/example/BenchmarkLoop.loopFor
-inline,org/example/BenchmarkLoop.loopForEach
-inline,org/example/BenchmarkLoop.loopIterator
-inline,org/example/BenchmarkLoop.loopWhile
-inline,org/example/BenchmarkLoop.setup
+inline,org/example/Benchmark.runHashMapBenchmark
+inline,org/example/Benchmark.runSkipListBenchmark
+inline,org/example/Benchmark.setupBenchmark

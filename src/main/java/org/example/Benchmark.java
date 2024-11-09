@@ -1,45 +1,66 @@
 package org.example;
 
 import org.openjdk.jmh.annotations.*;
+import org.openjdk.jmh.runner.Runner;
+import org.openjdk.jmh.runner.RunnerException;
+import org.openjdk.jmh.runner.options.Options;
+import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.concurrent.*;
 
+@BenchmarkMode(Mode.AverageTime)
+@OutputTimeUnit(TimeUnit.MILLISECONDS)
+@State(Scope.Benchmark)
 public class Benchmark {
+
+    public static void main(String[] args) throws RunnerException {
+        Options opt = new OptionsBuilder()
+                .include(Benchmark.class.getSimpleName())
+                .forks(1)
+                .build();
+
+        new Runner(opt).run();
+    }
 
     @Param({"600"})
     private int numberOfLibrarians;
 
     @Param({"10000"})
-    private int numberOfBooks = 10000;
+    private int numberOfBooks;
 
     @Param({".96"})
     private double readProbability;
 
     private Library library;
     private ConcurrentHashMap<Long,Long> libraryAsHashMap;
-    private CountDownLatch countDownLatch;
 
-
-
-    public void runClass() {
-        ExecutorService executorService = setup();
-        for (int i = 0; i < numberOfLibrarians; i++) {
-            executorService.execute(new Librarian(numberOfLibrarians, readProbability, library, libraryAsHashMap, countDownLatch));
+    @org.openjdk.jmh.annotations.Benchmark
+    public void runSkipListBenchmark() {
+        try (ExecutorService executorService = Executors.newFixedThreadPool(numberOfLibrarians)) {
+            for (int i = 0; i < numberOfLibrarians; i++) {
+                executorService.execute(new SkipListLibrarian(numberOfLibrarians, readProbability, library, libraryAsHashMap));
+            }
+            executorService.shutdown();
         }
-        executorService.shutdown();
+    }
+
+    @org.openjdk.jmh.annotations.Benchmark
+    public void runHashMapBenchmark() {
+        try (ExecutorService executorService = Executors.newFixedThreadPool(numberOfLibrarians)) {
+            for (int i = 0; i < numberOfLibrarians; i++) {
+                executorService.execute(new HashMapLibrarian(numberOfLibrarians, readProbability, library, libraryAsHashMap));
+            }
+            executorService.shutdown();
+        }
     }
 
     @Setup
-    private ExecutorService setup() {
-        CountDownLatch countDownLatch = new CountDownLatch(numberOfLibrarians); // used to separate the two ways of running this program
+    public void setupBenchmark() {
         SkipList skipList = JSONReader.generateRandomBooksSkipList(numberOfBooks);
-        ConcurrentHashMap<Long, Long> hashMap = JSONReader.generateRandomBooksHashMap(numberOfBooks);
-        Library library = new Library(skipList);
-
-
-        ExecutorService executorService = Executors.newFixedThreadPool(numberOfLibrarians);
-        return Executors.newFixedThreadPool(numberOfLibrarians);
-
+        libraryAsHashMap = JSONReader.generateRandomBooksHashMap(numberOfBooks);
+        library = new Library(skipList);
     }
+
 }
+
 

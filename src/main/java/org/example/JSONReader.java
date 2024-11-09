@@ -59,7 +59,5 @@ public class JSONReader {
 
         int readProbability = ThreadLocalRandom.current().nextInt(100);
         int randomNumber = ThreadLocalRandom.current().nextInt(0, 1) * readProbability;
-
-
     }
 }

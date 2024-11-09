@@ -32,8 +32,8 @@ import org.openjdk.jmh.results.ScalarResult;
 import org.openjdk.jmh.results.AggregationPolicy;
 import org.openjdk.jmh.runner.FailureAssistException;
 
-import org.example.jmh_generated.BenchmarkLoop_jmhType;
-public final class BenchmarkLoop_loopForEach_jmhTest {
+import org.example.jmh_generated.Benchmark_jmhType;
+public final class Benchmark_runSkipListBenchmark_jmhTest {
 
     byte p000, p001, p002, p003, p004, p005, p006, p007, p008, p009, p010, p011, p012, p013, p014, p015;
     byte p016, p017, p018, p019, p020, p021, p022, p023, p024, p025, p026, p027, p028, p029, p030, p031;
@@ -58,7 +58,7 @@ public final class BenchmarkLoop_loopForEach_jmhTest {
     Blackhole blackhole;
     Control notifyControl;
 
-    public BenchmarkTaskResult loopForEach_Throughput(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public BenchmarkTaskResult runSkipListBenchmark_Throughput(InfraControl control, ThreadParams threadParams) throws Throwable {
         this.benchmarkParams = control.benchmarkParams;
         this.iterationParams = control.iterationParams;
         this.threadParams    = threadParams;
@@ -68,24 +68,24 @@ public final class BenchmarkLoop_loopForEach_jmhTest {
         }
         if (threadParams.getSubgroupIndex() == 0) {
             RawResults res = new RawResults();
-            BenchmarkLoop_jmhType l_benchmarkloop0_G = _jmh_tryInit_f_benchmarkloop0_G(control);
+            Benchmark_jmhType l_benchmark0_G = _jmh_tryInit_f_benchmark0_G(control);
 
             control.preSetup();
 
 
             control.announceWarmupReady();
             while (control.warmupShouldWait) {
-                l_benchmarkloop0_G.loopForEach(blackhole);
+                l_benchmark0_G.runSkipListBenchmark();
                 res.allOps++;
             }
 
             notifyControl.startMeasurement = true;
-            loopForEach_thrpt_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, l_benchmarkloop0_G);
+            runSkipListBenchmark_thrpt_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, l_benchmark0_G);
             notifyControl.stopMeasurement = true;
             control.announceWarmdownReady();
             try {
                 while (control.warmdownShouldWait) {
-                    l_benchmarkloop0_G.loopForEach(blackhole);
+                    l_benchmark0_G.runSkipListBenchmark();
                     res.allOps++;
                 }
             } catch (Throwable e) {
@@ -94,29 +94,29 @@ public final class BenchmarkLoop_loopForEach_jmhTest {
             control.preTearDown();
 
             if (control.isLastIteration()) {
-                if (BenchmarkLoop_jmhType.tearTrialMutexUpdater.compareAndSet(l_benchmarkloop0_G, 0, 1)) {
+                if (Benchmark_jmhType.tearTrialMutexUpdater.compareAndSet(l_benchmark0_G, 0, 1)) {
                     try {
                         if (control.isFailing) throw new FailureAssistException();
-                        if (l_benchmarkloop0_G.readyTrial) {
-                            l_benchmarkloop0_G.readyTrial = false;
+                        if (l_benchmark0_G.readyTrial) {
+                            l_benchmark0_G.readyTrial = false;
                         }
                     } catch (Throwable t) {
                         control.isFailing = true;
                         throw t;
                     } finally {
-                        BenchmarkLoop_jmhType.tearTrialMutexUpdater.set(l_benchmarkloop0_G, 0);
+                        Benchmark_jmhType.tearTrialMutexUpdater.set(l_benchmark0_G, 0);
                     }
                 } else {
-                    long l_benchmarkloop0_G_backoff = 1;
-                    while (BenchmarkLoop_jmhType.tearTrialMutexUpdater.get(l_benchmarkloop0_G) == 1) {
-                        TimeUnit.MILLISECONDS.sleep(l_benchmarkloop0_G_backoff);
-                        l_benchmarkloop0_G_backoff = Math.max(1024, l_benchmarkloop0_G_backoff * 2);
+                    long l_benchmark0_G_backoff = 1;
+                    while (Benchmark_jmhType.tearTrialMutexUpdater.get(l_benchmark0_G) == 1) {
+                        TimeUnit.MILLISECONDS.sleep(l_benchmark0_G_backoff);
+                        l_benchmark0_G_backoff = Math.max(1024, l_benchmark0_G_backoff * 2);
                         if (control.isFailing) throw new FailureAssistException();
                         if (Thread.interrupted()) throw new InterruptedException();
                     }
                 }
                 synchronized(this.getClass()) {
-                    f_benchmarkloop0_G = null;
+                    f_benchmark0_G = null;
                 }
             }
             res.allOps += res.measuredOps;
@@ -127,19 +127,19 @@ public final class BenchmarkLoop_loopForEach_jmhTest {
             res.measuredOps *= opsPerInv;
             res.measuredOps /= batchSize;
             BenchmarkTaskResult results = new BenchmarkTaskResult((long)res.allOps, (long)res.measuredOps);
-            results.add(new ThroughputResult(ResultRole.PRIMARY, "loopForEach", res.measuredOps, res.getTime(), benchmarkParams.getTimeUnit()));
+            results.add(new ThroughputResult(ResultRole.PRIMARY, "runSkipListBenchmark", res.measuredOps, res.getTime(), benchmarkParams.getTimeUnit()));
             this.blackhole.evaporate("Yes, I am Stephen Hawking, and know a thing or two about black holes.");
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public static void loopForEach_thrpt_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, BenchmarkLoop_jmhType l_benchmarkloop0_G) throws Throwable {
+    public static void runSkipListBenchmark_thrpt_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, Benchmark_jmhType l_benchmark0_G) throws Throwable {
         long operations = 0;
         long realTime = 0;
         result.startTime = System.nanoTime();
         do {
-            l_benchmarkloop0_G.loopForEach(blackhole);
+            l_benchmark0_G.runSkipListBenchmark();
             operations++;
         } while(!control.isDone);
         result.stopTime = System.nanoTime();
@@ -148,7 +148,7 @@ public final class BenchmarkLoop_loopForEach_jmhTest {
     }
 
 
-    public BenchmarkTaskResult loopForEach_AverageTime(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public BenchmarkTaskResult runSkipListBenchmark_AverageTime(InfraControl control, ThreadParams threadParams) throws Throwable {
         this.benchmarkParams = control.benchmarkParams;
         this.iterationParams = control.iterationParams;
         this.threadParams    = threadParams;
@@ -158,24 +158,24 @@ public final class BenchmarkLoop_loopForEach_jmhTest {
         }
         if (threadParams.getSubgroupIndex() == 0) {
             RawResults res = new RawResults();
-            BenchmarkLoop_jmhType l_benchmarkloop0_G = _jmh_tryInit_f_benchmarkloop0_G(control);
+            Benchmark_jmhType l_benchmark0_G = _jmh_tryInit_f_benchmark0_G(control);
 
             control.preSetup();
 
 
             control.announceWarmupReady();
             while (control.warmupShouldWait) {
-                l_benchmarkloop0_G.loopForEach(blackhole);
+                l_benchmark0_G.runSkipListBenchmark();
                 res.allOps++;
             }
 
             notifyControl.startMeasurement = true;
-            loopForEach_avgt_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, l_benchmarkloop0_G);
+            runSkipListBenchmark_avgt_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, l_benchmark0_G);
             notifyControl.stopMeasurement = true;
             control.announceWarmdownReady();
             try {
                 while (control.warmdownShouldWait) {
-                    l_benchmarkloop0_G.loopForEach(blackhole);
+                    l_benchmark0_G.runSkipListBenchmark();
                     res.allOps++;
                 }
             } catch (Throwable e) {
@@ -184,29 +184,29 @@ public final class BenchmarkLoop_loopForEach_jmhTest {
             control.preTearDown();
 
             if (control.isLastIteration()) {
-                if (BenchmarkLoop_jmhType.tearTrialMutexUpdater.compareAndSet(l_benchmarkloop0_G, 0, 1)) {
+                if (Benchmark_jmhType.tearTrialMutexUpdater.compareAndSet(l_benchmark0_G, 0, 1)) {
                     try {
                         if (control.isFailing) throw new FailureAssistException();
-                        if (l_benchmarkloop0_G.readyTrial) {
-                            l_benchmarkloop0_G.readyTrial = false;
+                        if (l_benchmark0_G.readyTrial) {
+                            l_benchmark0_G.readyTrial = false;
                         }
                     } catch (Throwable t) {
                         control.isFailing = true;
                         throw t;
                     } finally {
-                        BenchmarkLoop_jmhType.tearTrialMutexUpdater.set(l_benchmarkloop0_G, 0);
+                        Benchmark_jmhType.tearTrialMutexUpdater.set(l_benchmark0_G, 0);
                     }
                 } else {
-                    long l_benchmarkloop0_G_backoff = 1;
-                    while (BenchmarkLoop_jmhType.tearTrialMutexUpdater.get(l_benchmarkloop0_G) == 1) {
-                        TimeUnit.MILLISECONDS.sleep(l_benchmarkloop0_G_backoff);
-                        l_benchmarkloop0_G_backoff = Math.max(1024, l_benchmarkloop0_G_backoff * 2);
+                    long l_benchmark0_G_backoff = 1;
+                    while (Benchmark_jmhType.tearTrialMutexUpdater.get(l_benchmark0_G) == 1) {
+                        TimeUnit.MILLISECONDS.sleep(l_benchmark0_G_backoff);
+                        l_benchmark0_G_backoff = Math.max(1024, l_benchmark0_G_backoff * 2);
                         if (control.isFailing) throw new FailureAssistException();
                         if (Thread.interrupted()) throw new InterruptedException();
                     }
                 }
                 synchronized(this.getClass()) {
-                    f_benchmarkloop0_G = null;
+                    f_benchmark0_G = null;
                 }
             }
             res.allOps += res.measuredOps;
@@ -217,19 +217,19 @@ public final class BenchmarkLoop_loopForEach_jmhTest {
             res.measuredOps *= opsPerInv;
             res.measuredOps /= batchSize;
             BenchmarkTaskResult results = new BenchmarkTaskResult((long)res.allOps, (long)res.measuredOps);
-            results.add(new AverageTimeResult(ResultRole.PRIMARY, "loopForEach", res.measuredOps, res.getTime(), benchmarkParams.getTimeUnit()));
+            results.add(new AverageTimeResult(ResultRole.PRIMARY, "runSkipListBenchmark", res.measuredOps, res.getTime(), benchmarkParams.getTimeUnit()));
             this.blackhole.evaporate("Yes, I am Stephen Hawking, and know a thing or two about black holes.");
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public static void loopForEach_avgt_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, BenchmarkLoop_jmhType l_benchmarkloop0_G) throws Throwable {
+    public static void runSkipListBenchmark_avgt_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, Benchmark_jmhType l_benchmark0_G) throws Throwable {
         long operations = 0;
         long realTime = 0;
         result.startTime = System.nanoTime();
         do {
-            l_benchmarkloop0_G.loopForEach(blackhole);
+            l_benchmark0_G.runSkipListBenchmark();
             operations++;
         } while(!control.isDone);
         result.stopTime = System.nanoTime();
@@ -238,7 +238,7 @@ public final class BenchmarkLoop_loopForEach_jmhTest {
     }
 
 
-    public BenchmarkTaskResult loopForEach_SampleTime(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public BenchmarkTaskResult runSkipListBenchmark_SampleTime(InfraControl control, ThreadParams threadParams) throws Throwable {
         this.benchmarkParams = control.benchmarkParams;
         this.iterationParams = control.iterationParams;
         this.threadParams    = threadParams;
@@ -248,14 +248,14 @@ public final class BenchmarkLoop_loopForEach_jmhTest {
         }
         if (threadParams.getSubgroupIndex() == 0) {
             RawResults res = new RawResults();
-            BenchmarkLoop_jmhType l_benchmarkloop0_G = _jmh_tryInit_f_benchmarkloop0_G(control);
+            Benchmark_jmhType l_benchmark0_G = _jmh_tryInit_f_benchmark0_G(control);
 
             control.preSetup();
 
 
             control.announceWarmupReady();
             while (control.warmupShouldWait) {
-                l_benchmarkloop0_G.loopForEach(blackhole);
+                l_benchmark0_G.runSkipListBenchmark();
                 res.allOps++;
             }
 
@@ -264,12 +264,12 @@ public final class BenchmarkLoop_loopForEach_jmhTest {
             int batchSize = iterationParams.getBatchSize();
             int opsPerInv = benchmarkParams.getOpsPerInvocation();
             SampleBuffer buffer = new SampleBuffer();
-            loopForEach_sample_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, buffer, targetSamples, opsPerInv, batchSize, l_benchmarkloop0_G);
+            runSkipListBenchmark_sample_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, buffer, targetSamples, opsPerInv, batchSize, l_benchmark0_G);
             notifyControl.stopMeasurement = true;
             control.announceWarmdownReady();
             try {
                 while (control.warmdownShouldWait) {
-                    l_benchmarkloop0_G.loopForEach(blackhole);
+                    l_benchmark0_G.runSkipListBenchmark();
                     res.allOps++;
                 }
             } catch (Throwable e) {
@@ -278,29 +278,29 @@ public final class BenchmarkLoop_loopForEach_jmhTest {
             control.preTearDown();
 
             if (control.isLastIteration()) {
-                if (BenchmarkLoop_jmhType.tearTrialMutexUpdater.compareAndSet(l_benchmarkloop0_G, 0, 1)) {
+                if (Benchmark_jmhType.tearTrialMutexUpdater.compareAndSet(l_benchmark0_G, 0, 1)) {
                     try {
                         if (control.isFailing) throw new FailureAssistException();
-                        if (l_benchmarkloop0_G.readyTrial) {
-                            l_benchmarkloop0_G.readyTrial = false;
+                        if (l_benchmark0_G.readyTrial) {
+                            l_benchmark0_G.readyTrial = false;
                         }
                     } catch (Throwable t) {
                         control.isFailing = true;
                         throw t;
                     } finally {
-                        BenchmarkLoop_jmhType.tearTrialMutexUpdater.set(l_benchmarkloop0_G, 0);
+                        Benchmark_jmhType.tearTrialMutexUpdater.set(l_benchmark0_G, 0);
                     }
                 } else {
-                    long l_benchmarkloop0_G_backoff = 1;
-                    while (BenchmarkLoop_jmhType.tearTrialMutexUpdater.get(l_benchmarkloop0_G) == 1) {
-                        TimeUnit.MILLISECONDS.sleep(l_benchmarkloop0_G_backoff);
-                        l_benchmarkloop0_G_backoff = Math.max(1024, l_benchmarkloop0_G_backoff * 2);
+                    long l_benchmark0_G_backoff = 1;
+                    while (Benchmark_jmhType.tearTrialMutexUpdater.get(l_benchmark0_G) == 1) {
+                        TimeUnit.MILLISECONDS.sleep(l_benchmark0_G_backoff);
+                        l_benchmark0_G_backoff = Math.max(1024, l_benchmark0_G_backoff * 2);
                         if (control.isFailing) throw new FailureAssistException();
                         if (Thread.interrupted()) throw new InterruptedException();
                     }
                 }
                 synchronized(this.getClass()) {
-                    f_benchmarkloop0_G = null;
+                    f_benchmark0_G = null;
                 }
             }
             res.allOps += res.measuredOps * batchSize;
@@ -308,14 +308,14 @@ public final class BenchmarkLoop_loopForEach_jmhTest {
             res.allOps /= batchSize;
             res.measuredOps *= opsPerInv;
             BenchmarkTaskResult results = new BenchmarkTaskResult((long)res.allOps, (long)res.measuredOps);
-            results.add(new SampleTimeResult(ResultRole.PRIMARY, "loopForEach", buffer, benchmarkParams.getTimeUnit()));
+            results.add(new SampleTimeResult(ResultRole.PRIMARY, "runSkipListBenchmark", buffer, benchmarkParams.getTimeUnit()));
             this.blackhole.evaporate("Yes, I am Stephen Hawking, and know a thing or two about black holes.");
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public static void loopForEach_sample_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, SampleBuffer buffer, int targetSamples, long opsPerInv, int batchSize, BenchmarkLoop_jmhType l_benchmarkloop0_G) throws Throwable {
+    public static void runSkipListBenchmark_sample_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, SampleBuffer buffer, int targetSamples, long opsPerInv, int batchSize, Benchmark_jmhType l_benchmark0_G) throws Throwable {
         long realTime = 0;
         long operations = 0;
         int rnd = (int)System.nanoTime();
@@ -330,7 +330,7 @@ public final class BenchmarkLoop_loopForEach_jmhTest {
             }
             for (int b = 0; b < batchSize; b++) {
                 if (control.volatileSpoiler) return;
-                l_benchmarkloop0_G.loopForEach(blackhole);
+                l_benchmark0_G.runSkipListBenchmark();
             }
             if (sample) {
                 buffer.add((System.nanoTime() - time) / opsPerInv);
@@ -348,7 +348,7 @@ public final class BenchmarkLoop_loopForEach_jmhTest {
     }
 
 
-    public BenchmarkTaskResult loopForEach_SingleShotTime(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public BenchmarkTaskResult runSkipListBenchmark_SingleShotTime(InfraControl control, ThreadParams threadParams) throws Throwable {
         this.benchmarkParams = control.benchmarkParams;
         this.iterationParams = control.iterationParams;
         this.threadParams    = threadParams;
@@ -357,7 +357,7 @@ public final class BenchmarkLoop_loopForEach_jmhTest {
             this.blackhole = new Blackhole("Today's password is swordfish. I understand instantiating Blackholes directly is dangerous.");
         }
         if (threadParams.getSubgroupIndex() == 0) {
-            BenchmarkLoop_jmhType l_benchmarkloop0_G = _jmh_tryInit_f_benchmarkloop0_G(control);
+            Benchmark_jmhType l_benchmark0_G = _jmh_tryInit_f_benchmark0_G(control);
 
             control.preSetup();
 
@@ -365,79 +365,85 @@ public final class BenchmarkLoop_loopForEach_jmhTest {
             notifyControl.startMeasurement = true;
             RawResults res = new RawResults();
             int batchSize = iterationParams.getBatchSize();
-            loopForEach_ss_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, batchSize, l_benchmarkloop0_G);
+            runSkipListBenchmark_ss_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, batchSize, l_benchmark0_G);
             control.preTearDown();
 
             if (control.isLastIteration()) {
-                if (BenchmarkLoop_jmhType.tearTrialMutexUpdater.compareAndSet(l_benchmarkloop0_G, 0, 1)) {
+                if (Benchmark_jmhType.tearTrialMutexUpdater.compareAndSet(l_benchmark0_G, 0, 1)) {
                     try {
                         if (control.isFailing) throw new FailureAssistException();
-                        if (l_benchmarkloop0_G.readyTrial) {
-                            l_benchmarkloop0_G.readyTrial = false;
+                        if (l_benchmark0_G.readyTrial) {
+                            l_benchmark0_G.readyTrial = false;
                         }
                     } catch (Throwable t) {
                         control.isFailing = true;
                         throw t;
                     } finally {
-                        BenchmarkLoop_jmhType.tearTrialMutexUpdater.set(l_benchmarkloop0_G, 0);
+                        Benchmark_jmhType.tearTrialMutexUpdater.set(l_benchmark0_G, 0);
                     }
                 } else {
-                    long l_benchmarkloop0_G_backoff = 1;
-                    while (BenchmarkLoop_jmhType.tearTrialMutexUpdater.get(l_benchmarkloop0_G) == 1) {
-                        TimeUnit.MILLISECONDS.sleep(l_benchmarkloop0_G_backoff);
-                        l_benchmarkloop0_G_backoff = Math.max(1024, l_benchmarkloop0_G_backoff * 2);
+                    long l_benchmark0_G_backoff = 1;
+                    while (Benchmark_jmhType.tearTrialMutexUpdater.get(l_benchmark0_G) == 1) {
+                        TimeUnit.MILLISECONDS.sleep(l_benchmark0_G_backoff);
+                        l_benchmark0_G_backoff = Math.max(1024, l_benchmark0_G_backoff * 2);
                         if (control.isFailing) throw new FailureAssistException();
                         if (Thread.interrupted()) throw new InterruptedException();
                     }
                 }
                 synchronized(this.getClass()) {
-                    f_benchmarkloop0_G = null;
+                    f_benchmark0_G = null;
                 }
             }
             int opsPerInv = control.benchmarkParams.getOpsPerInvocation();
             long totalOps = opsPerInv;
             BenchmarkTaskResult results = new BenchmarkTaskResult(totalOps, totalOps);
-            results.add(new SingleShotResult(ResultRole.PRIMARY, "loopForEach", res.getTime(), totalOps, benchmarkParams.getTimeUnit()));
+            results.add(new SingleShotResult(ResultRole.PRIMARY, "runSkipListBenchmark", res.getTime(), totalOps, benchmarkParams.getTimeUnit()));
             this.blackhole.evaporate("Yes, I am Stephen Hawking, and know a thing or two about black holes.");
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public static void loopForEach_ss_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, int batchSize, BenchmarkLoop_jmhType l_benchmarkloop0_G) throws Throwable {
+    public static void runSkipListBenchmark_ss_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, int batchSize, Benchmark_jmhType l_benchmark0_G) throws Throwable {
         long realTime = 0;
         result.startTime = System.nanoTime();
         for (int b = 0; b < batchSize; b++) {
             if (control.volatileSpoiler) return;
-            l_benchmarkloop0_G.loopForEach(blackhole);
+            l_benchmark0_G.runSkipListBenchmark();
         }
         result.stopTime = System.nanoTime();
         result.realTime = realTime;
     }
 
     
-    static volatile BenchmarkLoop_jmhType f_benchmarkloop0_G;
+    static volatile Benchmark_jmhType f_benchmark0_G;
     
-    BenchmarkLoop_jmhType _jmh_tryInit_f_benchmarkloop0_G(InfraControl control) throws Throwable {
-        BenchmarkLoop_jmhType val = f_benchmarkloop0_G;
+    Benchmark_jmhType _jmh_tryInit_f_benchmark0_G(InfraControl control) throws Throwable {
+        Benchmark_jmhType val = f_benchmark0_G;
         if (val != null) {
             return val;
         }
         synchronized(this.getClass()) {
             try {
             if (control.isFailing) throw new FailureAssistException();
-            val = f_benchmarkloop0_G;
+            val = f_benchmark0_G;
             if (val != null) {
                 return val;
             }
-            val = new BenchmarkLoop_jmhType();
+            val = new Benchmark_jmhType();
             Field f;
-            f = org.example.BenchmarkLoop.class.getDeclaredField("N");
+            f = org.example.Benchmark.class.getDeclaredField("numberOfBooks");
             f.setAccessible(true);
-            f.set(val, Integer.valueOf(control.getParam("N")));
-            val.setup();
+            f.set(val, Integer.valueOf(control.getParam("numberOfBooks")));
+            f = org.example.Benchmark.class.getDeclaredField("numberOfLibrarians");
+            f.setAccessible(true);
+            f.set(val, Integer.valueOf(control.getParam("numberOfLibrarians")));
+            f = org.example.Benchmark.class.getDeclaredField("readProbability");
+            f.setAccessible(true);
+            f.set(val, Double.valueOf(control.getParam("readProbability")));
+            val.setupBenchmark();
             val.readyTrial = true;
-            f_benchmarkloop0_G = val;
+            f_benchmark0_G = val;
             } catch (Throwable t) {
                 control.isFailing = true;
                 throw t;
