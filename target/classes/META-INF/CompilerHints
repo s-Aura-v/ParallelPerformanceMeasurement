@@ -3,6 +3,6 @@ dontinline,*.*_avgt_jmhStub
 dontinline,*.*_sample_jmhStub
 dontinline,*.*_ss_jmhStub
 dontinline,*.*_thrpt_jmhStub
-inline,org/example/Benchmark.runHashMapBenchmark
-inline,org/example/Benchmark.runSkipListBenchmark
-inline,org/example/Benchmark.setupBenchmark
+inline,com/parallelJMH/ParallelPerformance/Benchmark.runHashMapBenchmark
+inline,com/parallelJMH/ParallelPerformance/Benchmark.runSkipListBenchmark
+inline,com/parallelJMH/ParallelPerformance/Benchmark.setupBenchmark

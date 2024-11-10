@@ -1,0 +1,1 @@
+java -jar target/benchmarks.jar Benchmark -f 1 -wi 5 -i 5
