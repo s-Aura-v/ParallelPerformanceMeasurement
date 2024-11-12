@@ -3,16 +3,16 @@ package com.parallelJMH.ParallelPerformance;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ThreadLocalRandom;
 
+/**
+ * The HashMapLibrarian class simulates a librarian who interacts with a library and a concurrent HashMap.
+ * This class allows multiple threads to concurrently access and modify a shared HashMap library .
+ */
 public class HashMapLibrarian implements Runnable {
     private final Library library;
     private final ConcurrentHashMap<Long, Long> hashMapLibrary;
     private final int numberOfLibrarians;
-    // ReadProbability = A number between 0 and 1.
     private final double readProbability;
 
-    //DEBUG
-    int writeCount = 0;
-    int readCount = 0;
 
     public HashMapLibrarian(int numberOfLibrarians, double readProbability, Library library, ConcurrentHashMap<Long, Long> hashMapLibrary) {
         this.numberOfLibrarians = numberOfLibrarians;
@@ -26,8 +26,6 @@ public class HashMapLibrarian implements Runnable {
         for (int i = 0; i < numberOfLibrarians; i++) {
             runJavaUtilityCalculation();
         }
-//        System.out.printf("%-40s Read:%4d   Write:%3d%n",
-//                Thread.currentThread(), readCount, writeCount);
     }
 
 
@@ -38,7 +36,6 @@ public class HashMapLibrarian implements Runnable {
                 // READ
                 long id = ThreadLocalRandom.current().nextInt(0, 10000);
                 hashMapLibrary.containsKey(id);
-                readCount++;
             } else {
                 // WRITE
                 long id = ThreadLocalRandom.current().nextInt(0, 10000);
@@ -47,7 +44,6 @@ public class HashMapLibrarian implements Runnable {
                 } else {
                     hashMapLibrary.put(id, id);
                 }
-                writeCount++;
             }
         }
     }

@@ -1,5 +1,9 @@
 package com.parallelJMH.ParallelPerformance;
 
+/**
+ * The Library class represents a collection of books managed using a SkipList.
+ * Concurrent access to the collection is handled using read and write locks.
+ */
 public class Library {
     private final SkipList bookCollection;
 

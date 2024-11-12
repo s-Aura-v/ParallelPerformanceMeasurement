@@ -3,6 +3,11 @@ package com.parallelJMH.ParallelPerformance;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ThreadLocalRandom;
 
+/**
+ * The SkipListLibrarian class simulates concurrent read and write operations
+ * on a library managed by a SkipList structure.
+ * It implements Runnable to allow multithreaded access.
+ */
 public class SkipListLibrarian implements Runnable {
     private final Library library;
     private final ConcurrentHashMap<Long, Long> hashMapLibrary;

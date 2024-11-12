@@ -8,6 +8,10 @@ import java.io.IOException;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ThreadLocalRandom;
 
+/**
+ * A utility class for various operations with JSON data, including converting JSON files to SkipList,
+ * and generating random books in SkipList and HashMap structures.
+ */
 public class JSONReader {
     static int ID_MAX = 10000;
 
