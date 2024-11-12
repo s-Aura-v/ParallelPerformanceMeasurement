@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.data.xy.XYSeriesCollection;
 
@@ -53,8 +54,8 @@ public class Graph {
     }
 
     static void createHashMapLineChart(List<List<List<Double>>> rawData) {
-        XYSeries hashMapXY = new XYSeries( "HashMap" );
-        XYSeries skipListXY = new XYSeries( "SkipList" );
+        XYSeries hashMapXY = new XYSeries("HashMap");
+        XYSeries skipListXY = new XYSeries("SkipList");
 
 
         DefaultCategoryDataset hashMapDataSet = new DefaultCategoryDataset();
@@ -62,14 +63,19 @@ public class Graph {
         ArrayList<DefaultCategoryDataset> dataSets = new ArrayList<>();
         dataSets.add(hashMapDataSet);
         dataSets.add(skipListDataSet);
+        boolean completed = false;
         int index = 0;
         int iterationIndex = 0;
         for (List<List<Double>> dataSet : rawData) {
-            for (int i = 0; i < dataSet.size(); i++ ) {
+            for (int i = 0; i < dataSet.size(); i++) {
                 for (int j = 0; j < dataSet.get(i).size(); j++) {
+                    if (iterationIndex == 10) {
+                        iterationIndex = 0;
+                        completed = true;
+                    }
                     dataSets.get(index).addValue(
                             dataSet.get(i).get(j), "Iterations", "" + iterationIndex);
-                    if (iterationIndex < 10) {
+                    if (!completed) {
                         hashMapXY.add(iterationIndex, dataSet.get(i).get(j));
                     } else {
                         skipListXY.add(iterationIndex, dataSet.get(i).get(j));
@@ -96,24 +102,20 @@ public class Graph {
                 dataSets.get(1)
         );
 
-        XYSeriesCollection datasetXY = new XYSeriesCollection( );
-        datasetXY.addSeries( hashMapXY );
-        datasetXY.addSeries( skipListXY );
+        XYSeriesCollection datasetXY = new XYSeriesCollection();
+        datasetXY.addSeries(hashMapXY);
+        datasetXY.addSeries(skipListXY);
         XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
-        renderer.setSeriesPaint( 0 , Color.RED );
-        renderer.setSeriesPaint( 1 , Color.BLUE );
+        renderer.setSeriesPaint(0, Color.RED);
+        renderer.setSeriesPaint(1, Color.BLUE);
         JFreeChart xylineChart = ChartFactory.createXYLineChart(
                 "Average Runtime for SkipList and Hashmap Read Mostly Dataset",
                 "Iteration",
                 "Millisecond/Operation",
                 datasetXY,
-                PlotOrientation.VERTICAL ,
-                true , true , false);
-        XYPlot plot = xylineChart.getXYPlot( );
-
-
-
-
+                PlotOrientation.VERTICAL,
+                true, true, false);
+        XYPlot plot = xylineChart.getXYPlot();
 
 
         try {
