@@ -1,11 +1,13 @@
 package com.parallelJMH.ParallelPerformance;
 
 import org.openjdk.jmh.annotations.*;
+import org.openjdk.jmh.results.format.ResultFormatType;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 
+import java.io.InputStream;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -19,7 +21,9 @@ public class Benchmark {
     public static void main(String[] args) throws RunnerException {
         Options opt = new OptionsBuilder()
                 .include(Benchmark.class.getSimpleName())
-                .forks(1)
+                .forks(2)
+                .result("BenchmarkResults.json")
+                .resultFormat(ResultFormatType.JSON)
                 .build();
 
         new Runner(opt).run();
@@ -55,6 +59,7 @@ public class Benchmark {
             }
             executorService.shutdown();
         }
+
     }
 
     @Setup
