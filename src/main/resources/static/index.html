@@ -1,29 +1,47 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Parallel Performance Test</title>
-    <script defer src="script.js"></script>
+    <title>Graph Display</title>
     <style>
         body {
-            margin: 0;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
+            background-color: white;
+            font-family: Arial, sans-serif;
         }
-
-        #evil-button {
-            position: absolute;
-            white-space: nowrap;
-            font-size: 2rem;
+        .container {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+        }
+        .graph {
+            border: 1px solid #ccc;
+            margin: 20px 0;
+            padding: 10px;
+        }
+        .info {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
         }
     </style>
 </head>
 <body>
-<img src="/HashMap.png">
-<img src="/SkipList.png">
-<img src="/XYImage.png">
+<div class="container">
+    <div class="graph">
+        <h2>Graph 1</h2>
+        <div id="graph1"></div>
+        <img src="HashMap.png">
+    </div>
+    <div class="graph">
+        <h2>Graph 2</h2>
+        <div id="graph2"></div>
+        <img src="HashMap.png">
+    </div>
+    <div class="graph">
+        <h2>Graph 3</h2>
+        <div id="graph3"></div>
+        <img src="HashMap.png">
+    </div>
+</div>
 </body>
 </html>

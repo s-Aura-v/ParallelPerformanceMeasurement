@@ -1,7 +1,15 @@
 Run Info:
+Benchmark:
 java -jar target/benchmarks.jar Benchmark -f 2 -wi 5 -i 5
 
-java -jar target/benchmarks.jar Benchmark -f 1 -wi 2 -i 2
+Graphing:
+java -jar target/Graph.jar
+
+Displaying the graph on a website:
+java -jar target/runWebsite.jar
+
+
+java -jar target/benchmarks.jar Benchmark -f 1 -wi 1 -i 2
 
 
 

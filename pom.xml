@@ -140,7 +140,7 @@
 				<executions>
 					<execution>
 						<!-- YOU REALLY NEED THIS ID FOR SOME REASON. OR ELSE IT ALL BREAKS. -->
-						<id>shade-jar-with-dependencies</id>
+						<id>BenchmarkTests</id>
 						<phase>package</phase>
 						<goals>
 							<goal>shade</goal>
@@ -153,6 +153,36 @@
 								</transformer>
 							</transformers>
 							<createDependencyReducedPom>false</createDependencyReducedPom>
+						</configuration>
+					</execution>
+					<execution>
+						<id>Graph</id>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<finalName>Graph</finalName>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>com.parallelJMH.ParallelPerformance.Graphing.Graph</mainClass>
+                                </transformer>
+                            </transformers>
+						</configuration>
+					</execution>
+					<execution>
+						<id>Website</id>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<finalName>runWebsite</finalName>
+							<transformers>
+								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<mainClass>com.parallelJMH.ParallelPerformance.ParallelPerformanceApplication</mainClass>
+								</transformer>
+							</transformers>
 						</configuration>
 					</execution>
 				</executions>

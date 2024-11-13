@@ -12,6 +12,7 @@ public class LibraryLock {
     final static Condition writeable = lock.newCondition();
     final static Condition readable = lock.newCondition();
     static int readers = 0, writers = 0;
+    static int waitingReaders = 0;
 
     static void writeLock() {
         lock.lock();
@@ -28,9 +29,11 @@ public class LibraryLock {
     static void readLock() {
         lock.lock();
         try {
+            waitingReaders++;
             while (writers > 0) {
                 readable.awaitUninterruptibly();
             }
+            waitingReaders--;
             ++readers;
         } finally {
             lock.unlock();

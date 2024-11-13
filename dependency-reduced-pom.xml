@@ -39,7 +39,7 @@
         <version>3.6.0</version>
         <executions>
           <execution>
-            <id>shade-jar-with-dependencies</id>
+            <id>BenchmarkTests</id>
             <phase>package</phase>
             <goals>
               <goal>shade</goal>
@@ -52,6 +52,36 @@
                 </transformer>
               </transformers>
               <createDependencyReducedPom>false</createDependencyReducedPom>
+            </configuration>
+          </execution>
+          <execution>
+            <id>Graph</id>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <finalName>Graph</finalName>
+              <transformers>
+                <transformer>
+                  <mainClass>com.parallelJMH.ParallelPerformance.Graphing.Graph</mainClass>
+                </transformer>
+              </transformers>
+            </configuration>
+          </execution>
+          <execution>
+            <id>Website</id>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <finalName>runWebsite</finalName>
+              <transformers>
+                <transformer>
+                  <mainClass>com.parallelJMH.ParallelPerformance.ParallelPerformanceApplication</mainClass>
+                </transformer>
+              </transformers>
             </configuration>
           </execution>
         </executions>
@@ -200,6 +230,12 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-autoconfigure</artifactId>
       <version>3.3.5</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jfree</groupId>
+      <artifactId>jfreechart</artifactId>
+      <version>1.5.3</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>

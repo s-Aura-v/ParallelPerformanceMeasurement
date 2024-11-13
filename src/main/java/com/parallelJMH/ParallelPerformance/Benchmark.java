@@ -25,7 +25,7 @@ public class Benchmark {
     public static void main(String[] args) throws RunnerException {
         Options opt = new OptionsBuilder()
                 .include(Benchmark.class.getSimpleName())
-                .forks(2)
+                .forks(1)
                 .result("BenchmarkResults.json")
                 .resultFormat(ResultFormatType.JSON)
                 .build();
