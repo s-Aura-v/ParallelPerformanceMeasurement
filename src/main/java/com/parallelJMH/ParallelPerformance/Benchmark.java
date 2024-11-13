@@ -25,8 +25,7 @@ public class Benchmark {
     public static void main(String[] args) throws RunnerException {
         Options opt = new OptionsBuilder()
                 .include(Benchmark.class.getSimpleName())
-                .forks(1)
-                .result("BenchmarkResults.json")
+                .result("jmh-result.json")
                 .resultFormat(ResultFormatType.JSON)
                 .build();
 

@@ -27,7 +27,7 @@ import org.jfree.data.xy.XYSeriesCollection;
 public class Graph {
 
     public static void main(String[] args) throws IOException {
-        File jsonFile = new File("BenchmarkResults.json");
+        File jsonFile = new File("jmh-result.json");
 
         List<List<List<Double>>> rawData = getBenchmarkData(jsonFile);
         for (List<List<Double>> dataSet : rawData) {

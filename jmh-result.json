@@ -1,0 +1,108 @@
+[
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.parallelJMH.ParallelPerformance.Benchmark.runHashMapBenchmark",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Users/survive/Library/Java/JavaVirtualMachines/corretto-22.0.2/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "22.0.2",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "22.0.2+9-FR",
+        "warmupIterations" : 0,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "numberOfBooks" : "10000",
+            "numberOfLibrarians" : "600",
+            "readProbability" : ".96"
+        },
+        "primaryMetric" : {
+            "score" : 31.25570067601246,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 31.25570067601246,
+                "50.0" : 31.25570067601246,
+                "90.0" : 31.25570067601246,
+                "95.0" : 31.25570067601246,
+                "99.0" : 31.25570067601246,
+                "99.9" : 31.25570067601246,
+                "99.99" : 31.25570067601246,
+                "99.999" : 31.25570067601246,
+                "99.9999" : 31.25570067601246,
+                "100.0" : 31.25570067601246
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    31.25570067601246
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.parallelJMH.ParallelPerformance.Benchmark.runSkipListBenchmark",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Users/survive/Library/Java/JavaVirtualMachines/corretto-22.0.2/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "22.0.2",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "22.0.2+9-FR",
+        "warmupIterations" : 0,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "numberOfBooks" : "10000",
+            "numberOfLibrarians" : "600",
+            "readProbability" : ".96"
+        },
+        "primaryMetric" : {
+            "score" : 2072.9532834,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 2072.9532834,
+                "50.0" : 2072.9532834,
+                "90.0" : 2072.9532834,
+                "95.0" : 2072.9532834,
+                "99.0" : 2072.9532834,
+                "99.9" : 2072.9532834,
+                "99.99" : 2072.9532834,
+                "99.999" : 2072.9532834,
+                "99.9999" : 2072.9532834,
+                "100.0" : 2072.9532834
+            },
+            "scoreUnit" : "ms/op",
+            "rawData" : [
+                [
+                    2072.9532834
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+]
+
+
