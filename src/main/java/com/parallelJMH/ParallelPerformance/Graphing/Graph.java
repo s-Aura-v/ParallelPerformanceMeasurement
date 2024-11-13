@@ -119,9 +119,9 @@ public class Graph {
 
 
         try {
-            File hashMapImage = new File("HashMap.png");
-            File skipListImage = new File("SkipList.png");
-            File xyImage = new File("xyImage.png");
+            File hashMapImage = new File("src/main/resources/static/HashMap.png");
+            File skipListImage = new File("src/main/resources/static/SkipList.png");
+            File xyImage = new File("src/main/resources/static/xyImage.png");
             ChartUtils.saveChartAsPNG(hashMapImage, hashMapLineChart, 800, 600);
             ChartUtils.saveChartAsPNG(skipListImage, skipListLineChart, 800, 600);
             ChartUtils.saveChartAsPNG(xyImage, xylineChart, 800, 600);
