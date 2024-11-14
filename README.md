@@ -20,7 +20,7 @@ HashMap Result:
 
 SkipList Result:
 
-![Graph depicting how SkipList runtime fluctuated from 2600-3600 ms/operations](/src/main/resources/static/HashMap.png)
+![Graph depicting how SkipList runtime fluctuated from 2600-3600 ms/operations](/src/main/resources/static/SkipList.png)
 
 Results Merged: 
 
