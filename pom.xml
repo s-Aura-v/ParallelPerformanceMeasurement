@@ -152,6 +152,7 @@
 									<mainClass>org.openjdk.jmh.Main</mainClass>
 								</transformer>
 							</transformers>
+							<outputDirectory>./</outputDirectory>
 							<createDependencyReducedPom>false</createDependencyReducedPom>
 						</configuration>
 					</execution>

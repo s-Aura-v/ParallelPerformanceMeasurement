@@ -1,13 +1,24 @@
-Run Info:
+# Important Commands:
+## Run Commands
 Benchmark:
 java -jar target/benchmarks.jar Benchmark -f 2 -wi 5 -i 5 -rf json
 
 Graphing:
-java -jar target/Graph.jar
+/home/dl/linux/jdk/bin/java -jar target/Graph.jar
 
 Displaying the graph on a website:
 java -jar target/runWebsite.jar
 
+
+# Side Commands
+Run process as a background process
+nohup /home/dl/linux/jdk/bin/java -jar target/runWebsite.jar &
+
+Find every process running
+ps aux | grep java
+
+End that background process
+kill [id from ps aux | grep java ]
 
 DEBUG:
 java -jar target/benchmarks.jar Benchmark -f 1 -wi 0 -i 1 -rf json "Benchmark.json"
@@ -15,3 +26,4 @@ java -jar target/benchmarks.jar Benchmark -f 1 -wi 0 -i 1 -rf json "Benchmark.js
 
 
 
+/home/dl/linux/jdk/bin/java -jar target/benchmarks.jar Benchmark -f 5 -wi 5 -i 20 -rf json

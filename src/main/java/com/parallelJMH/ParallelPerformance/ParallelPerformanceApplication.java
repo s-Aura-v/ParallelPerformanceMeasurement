@@ -10,4 +10,5 @@ public class ParallelPerformanceApplication {
 		SpringApplication.run(ParallelPerformanceApplication.class, args);
 	}
 
+
 }
