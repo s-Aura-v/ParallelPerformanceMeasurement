@@ -11,6 +11,8 @@ In this task, we are examining a read-mostly database with two data stuructures:
 
 ## Program Results
 With 5 forks, 5 warmup iterations, and 20 iterations with 10000 random read/write requests, the results are as follows:
+
+
 HashMap Result:
 
 ![Graph depicting how HashMap runtime stayed around 72 ms/operations](/src/main/resources/static/HashMap.png)
